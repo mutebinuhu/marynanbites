@@ -5,6 +5,7 @@ import  {motion } from 'framer-motion';
 import Link from "next/link";
 import Nav from "../components/Nav";
 import Banner from "@/components/Banner";
+import Welcome from "@/components/Welcome";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Nav/>
       </div>
       <Banner/>
+      <Welcome/>
       
       
     
