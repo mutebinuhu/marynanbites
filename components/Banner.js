@@ -12,7 +12,7 @@ const Banner = () => {
                 Satisfy your cravings with just a click! Explore our mouthwatering menu on our web app and order now for a taste sensation delivered straight to your doorstep. 
                 </p>
                 <Link href="">
-                    <button className='bg-[#FBBE63] px-2 text-bold rounded py-2 mt-4'>Order Now</button>
+                    <button className='bg-[#FF9900] hover:bg-[#FBBE63] text-white font-bold py-2 px-4 rounded mt-4'>Order Now</button>
                 </Link>
                <div className=''>
              

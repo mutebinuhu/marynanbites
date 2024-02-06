@@ -6,6 +6,7 @@ import Link from "next/link";
 import Nav from "../components/Nav";
 import Banner from "@/components/Banner";
 import Welcome from "@/components/Welcome";
+import PopularDishes from "@/components/PopularDishes";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       </div>
       <Banner/>
       <Welcome/>
+      <PopularDishes/>
       
       
     
