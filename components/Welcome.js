@@ -1,12 +1,21 @@
+import Link from 'next/link';
 import React from 'react';
 
 const Welcome = () => {
     return (
-        <div className='md:flex justify-between items-center md:space-x-4 mx-10 relative md:mx-24 '>
-        <div className=' w-full md:w-3/5'>
-            <h1 className='text-5xl font-semibold text-gray-700	md:mt-12 mt-6 text-normal'>SNACKS AND FOOD YOU WILL LOVE TO <span className='text-[#FF9900]'>EAT</span></h1>
-            <p>
-            Satisfy your cravings with just a click! Explore our mouthwatering menu on our web app and order now for a taste sensation delivered straight to your doorstep. 
+        <div className='md:flex justify-between mt-24 items-center md:space-x-4 mx-10 relative md:mx-12 '>
+        
+        <div className='w-full md:w-1/2 mt-6 rounded-lg border-[#FF9900]  relative  h-60 md:h-96 ' style={{backgroundImage: "url(" + "https://img.freepik.com/free-photo/young-joyful-afro-american-cook-chef-uniform-closes-eyes-holding-tomatoes-with-hands-isolated-orange-wall_141793-33280.jpg?w=740&t=st=1707239996~exp=1707240596~hmac=915bc78ba20bcc736691c075589b8f2a505be66420b7f64765fa151523a987c8" + ")",
+backgroundPosition: 'center',
+backgroundSize: 'cover',
+backgroundRepeat: 'no-repeat'}}>
+
+        </div>
+
+        <div className=' w-full md:w-1/2'>
+            <h1 className='text-5xl font-semibold text-gray-700	md:mt-12 mt-6 text-normal'>Welcome to <span className='text-[#FF9900]'> Marynan Bites</span></h1>
+            <p className='py-6'>
+            Embark on a culinary journey with us! From meticulously crafted dishes to doorstep convenience, each bite promises perfection. Click, order, and indulge in the exquisite flavors waiting for you. Your next delicious meal is just a few taps away. Bon appétit! 🍔
             </p>
             <Link href="">
                 <button className='bg-[#FBBE63] px-2 text-bold rounded py-2 mt-4'>Order Now</button>
@@ -17,15 +26,6 @@ const Welcome = () => {
            </div>
           
 
-        </div>
-        <div className='w-full mt-6 rounded-3xl border-[#FF9900]  relative  h-60 md:h-96 ' style={{backgroundImage: "url(" + "https://img.freepik.com/free-photo/side-view-chicken-kebab-with-grilled-hot-green-pepper-tomato-pickled-cabbage-rice-pita_141793-4837.jpg?w=826&t=st=1707211174~exp=1707211774~hmac=c19f766ebf763110ab0e61cf315df90bc259b339e50604e3202b982d9ef46463" + ")",
-backgroundPosition: 'center',
-backgroundSize: 'cover',
-backgroundRepeat: 'no-repeat'}}>
-<div className='bg-red-400 w-48 border-8 border-[#FF9900] rounded-full h-48 absolute -right-11 -top-4' style={{backgroundImage: "url(" + "https://img.freepik.com/premium-photo/beer-snacks-food-from-bar_830198-2799.jpg?w=826" + ")",
-backgroundPosition: 'center',
-backgroundSize: 'cover',
-backgroundRepeat: 'no-repeat'}}></div>
         </div>
 
     </div>
