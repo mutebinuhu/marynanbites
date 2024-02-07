@@ -10,7 +10,7 @@ import PopularDishes from "@/components/PopularDishes";
 
 export default function Home() {
   return (
-    <main className="bg-[#FFF8EE] w-full text-gray-800">
+    <main className="bg-[#FFF8EE] w-full text-black">
       <div className="">
       <Nav/>
       </div>
