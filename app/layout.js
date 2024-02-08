@@ -1,6 +1,7 @@
 import { Montserrat } from "next/font/google";
 
 import "./globals.css";
+import Nav from "@/components/Nav";
 
 export const dynamic = "force-dynamic";
 
@@ -14,7 +15,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={mont.className}>{children}</body>
+      <body className={mont.className}>
+      <div className="bg-[#FFF8EE]">
+      <Nav/>
+      </div>
+        {children}
+      </body>
     </html>
   );
 }

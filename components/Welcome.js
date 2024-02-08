@@ -17,9 +17,14 @@ backgroundRepeat: 'no-repeat'}}>
             <p className='py-6'>
             Embark on a culinary journey with us! From meticulously crafted dishes to doorstep convenience, each bite promises perfection. Click, order, and indulge in the exquisite flavors waiting for you. Your next delicious meal is just a few taps away. Bon appétit! 🍔
             </p>
-            <Link href="">
-                <button className='bg-[#FF9900] px-2 text-bold rounded py-2 mt-4'>Order Now</button>
+            <div className='text-center'>
+            <Link href="/menu">
+                <button className='bg-[#FF9900] px-2 text-bold text-white rounded py-2 mt-4'>Order Now</button>
             </Link>
+            <Link href="/menu">
+                <button className='bg-[#FF9900] px-2 text-bold rounded py-2 mt-4 mx-2'>View Menu</button>
+            </Link>
+            </div>
            <div className=''>
          
 

@@ -5,15 +5,18 @@ import Link from 'next/link';
 
 const Banner = () => {
     return (
-        <div className='md:flex justify-between items-center md:space-x-12 mx-10 relative md:mx-24 '>
+        <div className='md:flex justify-between items-center md:space-x-12 mx-10 relative md:mx-12 '>
             <div className=' w-full md:w-3/5'>
                 <h1 className='text-5xl font-semibold text-gray-700	md:mt-12 mt-6 text-normal'>SNACKS AND FOOD YOU WILL LOVE TO <span className='text-[#FF9900]'>EAT</span></h1>
                 <p>
                 Satisfy your cravings with just a click! Explore our mouthwatering menu on our web app and order now for a taste sensation delivered straight to your doorstep. 
                 </p>
-                <Link href="">
+                <Link href="/menu">
                     <button className='bg-[#FF9900] hover:bg-[#FBBE63] text-white font-bold py-2 px-4 rounded mt-4'>Order Now</button>
                 </Link>
+                <Link href="/menu">
+                <button className='bg-[#FF9900] px-2 text-bold rounded py-2 mt-4 mx-2'>View Menu</button>
+            </Link>
                <div className=''>
              
 
