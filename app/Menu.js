@@ -60,15 +60,23 @@ const productsList = [
       productImage:"/images/kababs.jpg",
       productDescription: 'Indulge in the perfection of our expertly chaps and kababs. Each succulent piece features a golden exterior, sealing in rich, juicy tenderness for a flavor experience like no other',
       price: 3000,
-      category:"localFood"
+      category:"snack"
 
     },
     {
-      productName: 'Beef Samosa',
+      productName: 'Beef or Peas Samosa',
       productImage:"/images/beefsamosa.jpg",
-      productDescription: 'Satisfy your cravings with our delectable Beef Samosas. Encased in a crispy, golden pastry shell is a flavorful filling of finely seasoned ground beef, onions, and aromatic spices',
+      productDescription: 'Satisfy your cravings with our delectable Beef or Peas Samosas. Encased in a crispy, golden pastry shell is a flavorful filling of finely seasoned ground beef, onions, and aromatic spices',
       price: 1000,
-      category:"localFood"
+      category:"snack"
+
+    },
+    {
+      productName: 'Chips and Chicken',
+      productImage:"/images/chips.jpg",
+      productDescription: "Savor our irresistible duo of tender, expertly seasoned crispy chicken and perfectly golden chips. Each bite promises a delightful crunch, delivering a mouthwatering experience of flavors and texture",
+      price: 1000,
+      category:"snack"
 
     },
   ];
