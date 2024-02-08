@@ -8,7 +8,7 @@ const ProductCard = ({ image, name, description, price, onAddToCart }) => {
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5 }}
-      className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg"
+      className="bg-white p-4 mx-4 mt-4 md:mt-0 md:mx-0 rounded-lg shadow-md hover:shadow-lg"
     >
       <img src={image} alt={name} className="w-full h-48 object-cover mb-4" />
       <h3 className="text-xl font-semibold mb-2">{name}</h3>
