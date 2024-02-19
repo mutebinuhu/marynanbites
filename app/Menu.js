@@ -2,6 +2,7 @@
 import React, {useEffect, useState} from 'react';
 import ProductCard from '@/components/ProductCard';
 
+
 const productsList = [
     {
       productName: 'Beef Burger Set',
@@ -88,9 +89,8 @@ const Menu = () => {
    const [menuItems, setMenuItems] = useState([]);
    const getMenu = async () =>{
       try {
-        const response = await fetch("http://localhost:4000/api/menu", {
+        const response = await fetch(process.env.NEXT_PUBLIC_API_URL+"/api/menu", {
           method:'GET',
-
         })
         const res = await response.json();
         if(response.ok){
