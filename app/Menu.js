@@ -1,6 +1,6 @@
 "use client"
+import React, {useEffect, useState} from 'react';
 import ProductCard from '@/components/ProductCard';
-import React from 'react';
 
 const productsList = [
     {
@@ -85,6 +85,25 @@ const handleAddToCart = () => {
     console.log('Product added to cart');
   };
 const Menu = () => {
+   const [menuItems, setMenuItems] = useState([]);
+   const getMenu = async () =>{
+      try {
+        const response = await fetch("http://localhost:4000/api/menu", {
+          method:'GET',
+
+        })
+        const res = await response.json();
+        if(response.ok){
+          setMenuItems(res)
+        }
+      } catch (error) {
+        console.log("err", error)
+      }
+
+   }
+   useEffect(()=>{
+    getMenu()
+   }, [])
     return (
         <div className='bg-[#FFF8EE]'>
             <div>
@@ -92,12 +111,12 @@ const Menu = () => {
             <p className='text-center  mb-12'>Eat smart for a healthy heart</p>
         </div>
             <div className="md:grid grid-cols-3 gap-4 md:mx-4">
-            {productsList.map((product)=>{
+            {menuItems && menuItems.map((product)=>{
                 return(
                     <ProductCard
-                        image={product.productImage}
-                        name={product.productName}
-                        description={product.productDescription}
+                        image={product.image}
+                        name={product.name}
+                        description={product.description}
                         price={product.price}
                         onAddToCart={handleAddToCart}
                     />
