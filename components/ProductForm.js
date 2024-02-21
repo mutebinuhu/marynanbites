@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 
 // Functional component for the form
+
 const ProductForm = () => {
   // State to store form data
   const [formData, setFormData] = useState({
@@ -21,6 +22,20 @@ const ProductForm = () => {
   // Handle form submission
   const handleSubmit = async(e) => {
     e.preventDefault();
+    let token = ""
+    let  getToken = () =>{
+       
+      if(JSON.parse(localStorage.getItem("mbToken")) == null ){
+              window.location.href="/login"
+
+      }
+    token = JSON.parse(localStorage.getItem("mbToken")).token;
+    return token
+      
+    }
+    getToken();
+
+
     // You can perform additional actions here, like sending the data to a server
    try {
     console.log('Form submitted:', formData);
@@ -29,6 +44,7 @@ const ProductForm = () => {
       method:"POST",
       headers: {
         'Content-Type': 'application/json',
+        'Authorization':token
       },
       body: JSON.stringify(formData),
 
