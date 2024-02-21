@@ -16,6 +16,17 @@ const Nav = () => {
                     <li className='md:hidden flex font-bold bg-[#FBBE63] items-center space-x-2 border p-3 rounded border-gray-800'>
                         <span><CiMenuFries/></span>
                     </li>
+                    <li className='hidden md:block hover:bg-[#FBBE63] border border-gray-500  font-bold p-3 px-4 rounded'>
+                    <Link href="/login">
+                        Login
+                    </Link>
+                    </li>
+                    <li className='hidden md:block  bg-[#FBBE63] hover:bg-[#FBBE63] border border-gray-500  font-bold p-3 px-4 rounded'>
+                    <Link href="/sign-up">
+                       Sign Up
+                    </Link>
+                    </li>
+                   
                 </ul>
             </nav>
         </div>

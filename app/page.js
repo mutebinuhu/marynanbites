@@ -11,7 +11,7 @@ import KindsOfFood from "@/components/KindsOfFood";
 
 export default function Home() {
   return (
-    <main className="bg-[#FFF8EE] w-full text-black">
+    <main className="bg-[#FFF8EE] w-full h-screen text-black">
       
       <Banner/>
       <Welcome/>

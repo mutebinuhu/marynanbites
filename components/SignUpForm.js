@@ -63,7 +63,7 @@ const SignUpForm = () => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.5 }}
-      className="max-w-md mx-auto mt-8 p-6 bg-white rounded-md shadow-md">
+      className="max-w-md  mx-auto p-6 bg-white rounded-md shadow-md">
       <h2 className="text-2xl font-semibold mb-6">Signup</h2>
       {showAlert && <Alert type="success" message="Account created 😊"/>}
       <form onSubmit={handleSubmit}>
