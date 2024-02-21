@@ -8,6 +8,9 @@ const LoginForm = ({ onLogin }) => {
   const [username, setUsername] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [showAlert, setShowAlert] = useState(false);
+  const [errorType, setErrorType] = useState('')
+  const [message, setMessage] = useState('')
+
 
 
   const handleSubmit = async(e) => {
@@ -18,11 +21,18 @@ const LoginForm = ({ onLogin }) => {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify(username, phoneNumber),
+          body: JSON.stringify({phoneNumber}),
         });
-  
+
+        
+        const data = await response.json();
+        console.log("data", data)
+        
         if (response.ok) {
+
             setShowAlert(true)
+            setErrorType("success")
+            setMessage("You are loggedIn 😊 ")
             setTimeout(()=>{
               setShowAlert(false)
             window.location.href="/"
@@ -31,6 +41,11 @@ const LoginForm = ({ onLogin }) => {
           // Optionally, you can redirect the user or perform other actions upon successful signup
         } else {
           console.error('Signup failed');
+          
+
+          setErrorType("error")
+          setMessage(data.error + "😥")
+          setShowAlert(true)
         }
       } catch (error) {
         console.error('Error:', error.message);
@@ -46,21 +61,9 @@ const LoginForm = ({ onLogin }) => {
       onSubmit={handleSubmit}
     >
       <h2 className="text-2xl font-semibold mb-6">Login</h2>
-      {showAlert && <Alert type="success" message="User Logged In 😊"/>}
+      {showAlert && <Alert type={errorType} message={message} onClose={()=>setShowAlert(false)}/>}
+    
       <div className="mb-4">
-        <label htmlFor="username" className="block text-gray-700">
-          Username:
-        </label>
-        <input
-          type="text"
-          id="username"
-          className="w-full p-2 border rounded-md"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-      </div>
-      <div cla
-      ssName="mb-4">
         <label htmlFor="phoneNumber" className="block text-gray-700">
           Phone Number:
         </label>
@@ -80,5 +83,6 @@ const LoginForm = ({ onLogin }) => {
     </motion.form>
   );
 };
+
 
 export default LoginForm;
