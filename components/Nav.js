@@ -1,10 +1,19 @@
+"use client"
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 import { CiMenuFries } from "react-icons/ci";
+import SideNavbar from './SideNavbar';
 
 const Nav = () => {
+    const [isNavbarOpen, setIsNavbarOpen] = useState(false);
+
+
+  const toggleNavbar = () => {
+    setIsNavbarOpen(!isNavbarOpen);
+  };
     return (
         <div className=''>
+            <SideNavbar isOpen={isNavbarOpen} onClose={toggleNavbar} />
             <nav className='flex justify-between  items-center p-6'>
                 <Link href="/">
                 <div className='font-bold'>Marynan <span className='bg-[#FBBE63]  md:mx-0 px-4 py-2 rounded-full'>Bites</span></div>
@@ -13,7 +22,7 @@ const Nav = () => {
                     <li className='p-3 hidden md:inline'><Link href="/">Home</Link></li>
                     <li className='p-3 hidden md:inline'><Link href="/menu">Menu</Link></li>
                     <li className='p-3 hidden md:inline'><Link href="/contact-us">Contact Us</Link></li>
-                    <li className='md:hidden flex font-bold bg-[#FBBE63] items-center space-x-2 border p-3 rounded border-gray-800'>
+                    <li className='md:hidden flex font-bold bg-[#FBBE63] items-center space-x-2 border p-3 rounded border-gray-800' onClick={()=>toggleNavbar()}>
                         <span><CiMenuFries/></span>
                     </li>
                     <li className='p-3 hidden md:inline'><Link href="/add-menu">Manage Menu</Link></li>

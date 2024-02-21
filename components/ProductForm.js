@@ -68,7 +68,7 @@ const ProductForm = () => {
 
   return (
     <div className="container mx-auto mt-8 ">
-      <form onSubmit={handleSubmit} className="max-w-md mx-auto mb-8">
+      <form onSubmit={handleSubmit} className="mx-12 md:max-w-md md:mx-auto mb-8">
         {/* Name */}
         <div className="mb-4">
           <label htmlFor="name" className="block text-sm font-medium text-gray-700">

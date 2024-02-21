@@ -3,7 +3,7 @@ import React from 'react';
 
 const Page = () => {
     return (
-        <div className='h-screen bg-[#FFF8EE]'>
+        <div className='h-screen mx-8 md:mx-0 bg-[#FFF8EE]'>
           <LoginForm/>  
         </div>
     );
