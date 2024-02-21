@@ -2,7 +2,9 @@
 "use client"
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { jwtDecode } from "jwt-decode";
 import Alert from './Alert';
+
 
 const LoginForm = ({ onLogin }) => {
   const [username, setUsername] = useState('');
@@ -26,7 +28,11 @@ const LoginForm = ({ onLogin }) => {
 
         
         const data = await response.json();
-        console.log("data", data)
+        const token = data.token
+        const user = jwtDecode(token).user[0]
+        localStorage.setItem('mbToken', JSON.stringify({token, user}));
+
+        console.log("user", token)
         
         if (response.ok) {
 
@@ -36,7 +42,7 @@ const LoginForm = ({ onLogin }) => {
             setTimeout(()=>{
               setShowAlert(false)
             window.location.href="/"
-            }, 2000)
+           }, 2000)
           
           // Optionally, you can redirect the user or perform other actions upon successful signup
         } else {
@@ -49,6 +55,9 @@ const LoginForm = ({ onLogin }) => {
         }
       } catch (error) {
         console.error('Error:', error.message);
+        setErrorType("error")
+        setMessage("Error while connecting to the server 😥")
+        setShowAlert(true)
       }
     
   };
