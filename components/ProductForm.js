@@ -51,8 +51,8 @@ const ProductForm = () => {
   };
 
   return (
-    <div className="container mx-auto mt-8">
-      <form onSubmit={handleSubmit} className="max-w-md mx-auto">
+    <div className="container mx-auto mt-8 ">
+      <form onSubmit={handleSubmit} className="max-w-md mx-auto mb-8">
         {/* Name */}
         <div className="mb-4">
           <label htmlFor="name" className="block text-sm font-medium text-gray-700">
@@ -137,7 +137,7 @@ const ProductForm = () => {
         <div className="mt-4">
           <button
             type="submit"
-            className="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
+            className="px-4 py-2  text-white bg-[#FF9900] rounded-md hover:bg-[#FBBE63] focus:outline-none focus:ring focus:border-blue-300"
           >
             Submit
           </button>

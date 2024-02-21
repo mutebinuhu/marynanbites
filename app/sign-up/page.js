@@ -1,10 +1,10 @@
+import SignUpForm from '@/components/SignUpForm';
 import React from 'react';
-import Menu from '../Menu';
 
 const Page = () => {
     return (
-        <div className='bg-[#FFF8EE]'>
-            <Menu/>
+        <div>
+            <SignUpForm/>
         </div>
     );
 }

@@ -4,13 +4,7 @@ import ProductCard from '@/components/ProductCard';
 
 
 const productsList = [
-    {
-      productName: 'Beef Burger Set',
-      productImage:"https://img.freepik.com/free-photo/fast-food-platter-with-burger-fries_114579-2173.jpg?w=826&t=st=1707245277~exp=1707245877~hmac=d14acdabd386008b5199e97c513a94eeda4d3d5c32c1bb1face3f3d5920afda3",
-      productDescription: 'Welcome to a world of culinary delight with our Gourmet Angus Beef Burger, a masterpiece that elevates the classic American comfort food to a whole new level',
-      price: 10000,
-      category:"snack"
-    },
+    
     {
       productName: 'Classic Garden Salad',
       productImage:"https://img.freepik.com/free-photo/top-view-homemade-delicious-salad-with-many-ingredients-plate-black-green-mix-colors-background_179666-20005.jpg?w=826&t=st=1707245365~exp=1707245965~hmac=7b93c7f73cbee7ac4e3b16e75e5c232b6ede433f7e22a7f4e637d9daa16d4fa3",
@@ -25,29 +19,9 @@ const productsList = [
       price: 1000,
       category:"snack"
     },
-    {
-      productName: 'Meat and All Foods',
-      productImage:"https://img.freepik.com/premium-photo/bowl-goulash-soup-with-meat-potatoes-chillies-parsley_341862-1969.jpg?w=360",
-      productDescription: 'Have Your Lunch with Our smoked First Meat, Feel  the aroma for every bite You take. You can have it with matooke, sweet potatoes, Cassava, White or brown rice',
-      price: 8000,
-      category:"localFood"
-    },
-    {
-      productName: 'Chicken and All Foods',
-      productImage:"https://img.freepik.com/free-photo/close-up-homemade-soup-with-chicken-spices-set_140725-114892.jpg?w=826&t=st=1707401028~exp=1707401628~hmac=47182e45283e9678d344aafd69f12c915b06f40d5f161e8176b9db5ecfecdfd7",
-      productDescription: 'Our Chicken is one of the best dishes You will have to try atleast once in your line. Have it with matooke, Brown or White Rice. Its Yummy and You will be satisfied Regardless.',
-      price: 8000,
-      category:"localFood"
+    
+   
 
-    },
-    {
-      productName: 'Gnuts and All Foods',
-      productImage:"https://i.pinimg.com/564x/04/9e/f6/049ef61c4c699ebe32958c13e608c307.jpg",
-      productDescription: 'Whether Plain or with Smoked Fish, Im sure that we shall sparkle your Taste Buds. You can have Gnuts with any type of food You would like.',
-      price: 7000,
-      category:"localFood"
-
-    },
     {
       productName: 'Beans and All Foods',
       productImage:"https://img.freepik.com/free-photo/vertical-view-tomato-soup-beans-lemon-cutting-board-mixed-color-background_140725-91982.jpg?w=360&t=st=1707402199~exp=1707402799~hmac=958106ac18fa28a099f22272a18d22c5c192174b3e5028ea1cc10923408dd278",
@@ -87,7 +61,9 @@ const handleAddToCart = () => {
   };
 const Menu = () => {
    const [menuItems, setMenuItems] = useState([]);
+   const [isLoading, setIsLoading] = useState(false);
    const getMenu = async () =>{
+    setIsLoading(true);
       try {
         const response = await fetch(process.env.NEXT_PUBLIC_API_URL+"/api/menu", {
           method:'GET',
@@ -96,9 +72,12 @@ const Menu = () => {
         if(response.ok){
           setMenuItems(res)
         }
+      setIsLoading(false);
       } catch (error) {
         console.log("err", error)
+        setIsLoading(false);
       }
+      setIsLoading(false);
 
    }
    useEffect(()=>{
@@ -110,7 +89,8 @@ const Menu = () => {
             <h2 className='text-center text-3xl text-bold py-4'>Our Menu</h2>
             <p className='text-center  mb-12'>Eat smart for a healthy heart</p>
         </div>
-            <div className="md:grid grid-cols-3 gap-4 md:mx-4">
+            <p className='mx-12'>{isLoading && <span>Loading....</span>}</p>
+            <div className="md:grid grid-cols-3 gap-4 md:mx-4 bg-[#FFF8EE]">
             {menuItems && menuItems.map((product)=>{
                 return(
                     <ProductCard
