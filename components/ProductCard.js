@@ -1,10 +1,9 @@
 // ProductCard.js
 import React from 'react';
-import { motion } from 'framer-motion';
 
 const ProductCard = ({ image, name, description, price, onAddToCart }) => {
   return (
-    <motion.div
+    <div
 
       className="bg-white p-4 mx-4 mt-4 md:mt-0 md:mx-0 rounded-lg shadow-md hover:shadow-lg"
     >
@@ -18,7 +17,7 @@ const ProductCard = ({ image, name, description, price, onAddToCart }) => {
       >
         Add to Cart
       </button>
-    </motion.div>
+    </div>
   );
 };
 
