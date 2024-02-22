@@ -5,9 +5,7 @@ import { motion } from 'framer-motion';
 const ProductCard = ({ image, name, description, price, onAddToCart }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.8 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.5 }}
+
       className="bg-white p-4 mx-4 mt-4 md:mt-0 md:mx-0 rounded-lg shadow-md hover:shadow-lg"
     >
       <img src={image} alt={name} className="w-full h-48 object-cover mb-4" />
