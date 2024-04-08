@@ -25,7 +25,7 @@ const Nav = () => {
                     <li className='md:hidden flex font-bold bg-[#FBBE63] items-center space-x-2 border p-3 rounded border-gray-800' onClick={()=>toggleNavbar()}>
                         <span><CiMenuFries/></span>
                     </li>
-                    <li className='p-3 hidden md:inline'><Link href="/add-menu">Manage Menu</Link></li>
+                    {/*<li className='p-3 hidden md:inline '><Link href="/add-menu">Manage Menu</Link></li>*/}
 
                     <li className='hidden md:block hover:bg-[#FBBE63] border border-gray-500  font-bold p-3 px-4 rounded'>
                     <Link href="/login">
