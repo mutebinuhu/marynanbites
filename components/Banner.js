@@ -9,7 +9,7 @@ const Banner = () => {
             <div className=' w-full md:w-3/5'>
                 <h1 className='text-5xl font-semibold text-gray-700	md:mt-12 mt-6 text-normal'>SNACKS AND FOOD YOU WILL LOVE TO <span className='text-[#FF9900]'>EAT</span></h1>
                 <p>
-                Satisfy your cravings with just a click! Explore our mouthwatering menu on our web app and order now for a taste sensation delivered straight to your doorstep. 
+                Satisfy your cravings with just a click! Explore our mouthwatering menu on our web app and order now for a taste sensation delivered straight to your doorstep Now. 
                 </p>
                 <Link href="/menu">
                     <button className='bg-[#FF9900] hover:bg-[#FBBE63] text-white font-bold py-2 px-4 rounded mt-4'>Order Now</button>
