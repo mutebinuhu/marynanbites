@@ -27,7 +27,8 @@ export default function RootLayout({ children }) {
 
         {/* Meta Description */}
         <meta name="description" content="Explore the delightful world of Marynan Bites - a culinary journey of flavors and tastes that will leave you wanting more." />
-        
+        <meta name="google-site-verification" content="wpNhnTkM-4cKoVJMvUwIXDDJcrJUl3bXmLHYfemTBQ4" />
+
       </Head>
       <body className={`${mont.className} bg-[#FFF8EE] `}>
 

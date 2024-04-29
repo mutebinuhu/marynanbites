@@ -17,6 +17,7 @@ const ProductForm = () => {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+
   };
 
   // Handle form submission
@@ -39,7 +40,6 @@ const ProductForm = () => {
     // You can perform additional actions here, like sending the data to a server
    try {
     console.log('Form submitted:', formData);
-    //const res = await fetch("https://marynanbites-be.onrender.com/api/menu")
     const res = await fetch("http://localhost:4000/api/menu", {
       method:"POST",
       headers: {
